@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+
+<body>
+    <div class="container">
+        <form action="{{ url_for('index') }}">
+        <h2><font color="red">Page Not Found</font></h2>
+        <br>
+            <h4>The page you are looking for is just not there!</h4>
+            <br>
+                <button type="submit" class="btn btn-primary float-right">go to home page</button>
+        </form>
+    </div>
+</body>

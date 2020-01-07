@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+<body>
+<div class="row">
+        <div class="col-md-8">
+    <h2 align="center">Web Page Analyzer</h2>
+    </div>
+</div>
+<form action="{{ url_for('get_info') }}" method="POST">
+    <div class="form-group row ">
+        <br>
+        <br>
+        <div >
+        <label for="input_url" class="col-sm-2 col-form-label text-right " ><h4>Enter the url:</h4></label>
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="input_url" id="input_url">
+        </div>
+
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-primary float-right">Find</button>
+        </div>
+    </div>
+
+    <div class="container">
+        {% if top_words %}
+            <h4>Total Number of words in the web page= {{total_count}}</h4>
+            <h4>Number of unique words = {{unique_count}}
+            </h4><h4>Most frequently occuring words:</h4>
+            <ul>
+            {% for word in top_words %}
+                <li style="font-size: 10pt"><h4>{{word}}</h4></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <br>
+</form>
+</div>
+</body>
+</html>
