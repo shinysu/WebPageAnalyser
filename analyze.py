@@ -8,6 +8,7 @@ def clean_string(inp_str):
 
 
 def remove_stop_words(inp_dict):
+    '''clean the dictionary of words by removing the stop words'''
     stop_word_list = get_stop_words()
     for word in stop_word_list:
         if word in inp_dict.keys():
@@ -16,6 +17,7 @@ def remove_stop_words(inp_dict):
 
 
 def get_stop_words():
+    '''read stop words from the file into a list'''
     stop_word_list = []
     with open('stopwords.txt','r') as file:
         for word in file:
