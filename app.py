@@ -1,7 +1,7 @@
 from flask import Flask, render_template,request,url_for,redirect
 import requests
 from bs4 import BeautifulSoup
-from analyze import tag_visible, get_word_count, text_from_html
+from analyze import get_word_count, text_from_html
 
 app = Flask(__name__)
 
